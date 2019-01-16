@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>pwa_001</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>pwa_001</h1>
+    </header>
+
+    <main>
+      <ul>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+      </ul>
+      <ul>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+        <li>ダミーダミーダミー</li>
+      </ul>
+    </main>
+
+    <script>
+      if ('serviceWorker' in navigator){ // ServiceWorkerサポート確認
+        console.log('ServiceWorkerをサポートしています');
+        window.addEventListener('load',() => {
+
+          navigator.serviceWorker // ServiceWorkerインストール
+            .register('./sw.js', {
+              scope: './'
+            })
+            .then((reg) => {
+              console.log('ServiceWorkerインストール完了');
+            })
+            .catch((error) => {
+              console.log('ServiceWorkerインストール失敗');
+            });
+
+        });
+      }
+    </script>
+  </body>
+</html>
